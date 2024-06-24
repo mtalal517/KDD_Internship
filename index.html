@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PubMed Article Summarizer</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        background-color: #005bb5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      h1, h2 {
+        color: #0073e6;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      input[type="file"] {
+        margin-bottom: 10px;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #0073e6;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        align-items: center;
+      }
+      .button:hover {
+        background-color: #005bb5;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        resize: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>PubMed Article Summarizer</h1>
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit" class="button">Upload</button>
+      </form>
+      <h2>Original Article</h2>
+      <textarea readonly>{{ original_text }}</textarea>
+      <h2>Summarized Article</h2>
+      <textarea readonly>{{ summary_text }}</textarea>
+    </div>
+  </body>
+</html>
